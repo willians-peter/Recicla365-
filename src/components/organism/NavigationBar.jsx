@@ -20,7 +20,7 @@ function NavigationBar() {
             Início
           </NavLink>
         </li>
-         <li>
+        <li>
           <NavLink to="/dashboard" className={navActiveClass}>
             Dashboard
           </NavLink>
@@ -31,11 +31,16 @@ function NavigationBar() {
           </NavLink>
         </li>
         <li>
+          <NavLink to="/seuspontosdecoleta" className={navActiveClass}>
+            seuspontosdecoleta
+          </NavLink>
+        </li>
+        <li>
           <NavLink to="/pontosdecoleta" className={navActiveClass}>
             PontosDeColeta
           </NavLink>
         </li>
-         <li>
+        <li>
           <NavLink to="/cadastropontodecoleta" className={navActiveClass}>
             cadastropontodecoleta
           </NavLink>
