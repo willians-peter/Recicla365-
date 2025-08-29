@@ -1,0 +1,51 @@
+.container {
+  padding: 4px;
+  display: flex;
+  
+  background-color: #4CAF50;
+  color: antiquewhite;
+}
+
+.title {
+  display: flex;
+  gap: 4px;
+}
+
+.title h1 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.title a {
+  color: antiquewhite;
+  text-decoration: none;
+}
+
+.logo {
+  width: 16px;
+  height: 16px;
+}
+
+.navList {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 4px;
+  margin-left: auto;
+}
+
+.navList a {
+  text-decoration: none;
+  color: antiquewhite;
+}
+
+.navList a:hover,
+.navList a:focus {
+  text-decoration: underline;
+}
+
+.navList a.active {
+  color: orange;
+}

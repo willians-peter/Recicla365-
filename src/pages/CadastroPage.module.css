@@ -1,0 +1,83 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+}
+
+.imageContainer {
+  width: 50%;
+  text-align: center;
+}
+
+.imageContainer img {
+  width: 400px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.loginForm {
+  width: 50%;
+  background-color: #f7f7f7;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.loginForm h1 {
+  margin-top: 0;
+}
+
+.loginForm form {
+  display: flex;
+  flex-direction: column;
+}
+
+.loginForm label {
+  margin-bottom: 10px;
+}
+
+.loginForm input, .loginForm select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.loginForm button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  .imageContainer {
+    width: 100%;
+  }
+  .loginForm {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .loginForm {
+    padding: 10px;
+  }
+  .loginForm input, .loginForm select {
+    padding: 5px;
+  }
+}

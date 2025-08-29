@@ -7,30 +7,50 @@ import CadastroPontoDeColetaPage from "./pages/CadastroPontoDeColetaPage";
 import SeusPontosDeColetaPage from "./pages/SeusPontosDeColeta";
 import NotFoundPage from "./pages/NotFoundPage";
 import HomePage from "./pages/HomePage";
+import PrivateRoute from "./components/molecules/PrivateRoutes";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <NavigationBar />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/dashboard" element={<DashBoardPage />} />
+        <Route
+          path="/dashboard"
+          element={
+            <PrivateRoute>
+              <DashBoardPage />
+            </PrivateRoute>
+          }
+        />
         <Route path="/cadastro" element={<CadastroPage />} />
-
-        <Route path="/pontosdecoleta" element={<PontosDeColetaPage />} />
+        <Route
+          path="/pontosdecoleta"
+          element={
+            <PrivateRoute>
+              <PontosDeColetaPage />
+            </PrivateRoute>
+          }
+        />
         <Route
           path="/seuspontosdecoleta"
-          element={<SeusPontosDeColetaPage />}
+          element={
+            <PrivateRoute>
+              <SeusPontosDeColetaPage />
+            </PrivateRoute>
+          }
         />
         <Route
           path="/cadastropontodecoleta"
-          element={<CadastroPontoDeColetaPage />}
+          element={
+            <PrivateRoute>
+              <CadastroPontoDeColetaPage />
+            </PrivateRoute>
+          }
         />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </div>
   );
 }
-
 export default App;
