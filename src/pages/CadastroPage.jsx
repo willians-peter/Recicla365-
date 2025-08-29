@@ -3,6 +3,7 @@ import styles from "./CadastroPage.module.css";
 import MundoRecicle from "../assets/MundoRecicle.jpeg";
 import NavigationBar from "../components/organism/NavigationBar"; 
 
+
 function CadastroPage() {
   const handleDateChange = (event) => {
     const date = event.target.value.replace(/\D+/g, '');

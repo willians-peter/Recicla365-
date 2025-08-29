@@ -18,14 +18,14 @@
 }
 
 .imageContainer img {
-  width: 400px;
-  height: 300px;
+  width: 500px;
+  height: 400px;
   object-fit: cover;
   border-radius: 16px;
 }
 
 .loginForm {
-  width: 50%;
+  width: 100%;
   background-color: #f7f7f7;
   padding: 20px;
   border: 1px solid #ddd;
@@ -71,9 +71,11 @@
   }
   .loginForm input {
     width: 100%;
+    gap: 10px;
   }
   .loginForm button {
     width: 100%;
+    gap: 10px;
   }
 }
 

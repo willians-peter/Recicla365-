@@ -1,5 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import styles from "./NavigationBar.module.css";
+import IconRecicle from "../../assets/IconRecicle.png"
 
 function NavigationBar() {
   const navActiveClass = ({ isActive }) => {
@@ -9,40 +10,31 @@ function NavigationBar() {
   return (
     <nav className={styles.container}>
       <div className={styles.title}>
-        <img className={styles.logo} src="/favicon.ico" alt="Logo" />
+        
+        <img className={styles.logo} src={IconRecicle} alt="Logo" />
         <Link to="/">
           <h1>Recicla 365</h1>
         </Link>
       </div>
       <ul className={styles.navList}>
         <li>
-          <NavLink to="/" className={navActiveClass}>
+          <NavLink to="/dashboard" className={navActiveClass}>
             Início
           </NavLink>
         </li>
         <li>
-          <NavLink to="/dashboard" className={navActiveClass}>
-            Dashboard
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/cadastro" className={navActiveClass}>
-            Cadastro
-          </NavLink>
-        </li>
-        <li>
           <NavLink to="/seuspontosdecoleta" className={navActiveClass}>
-            seuspontosdecoleta
+            Seus Pontos de Coleta
           </NavLink>
         </li>
         <li>
           <NavLink to="/pontosdecoleta" className={navActiveClass}>
-            PontosDeColeta
+            Pontos de coleta
           </NavLink>
         </li>
         <li>
           <NavLink to="/cadastropontodecoleta" className={navActiveClass}>
-            cadastropontodecoleta
+            Cadastrar Novo
           </NavLink>
         </li>
       </ul>
