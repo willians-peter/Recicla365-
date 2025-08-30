@@ -2,7 +2,7 @@
   padding: 4px;
   display: flex;
   
-  background-color: #4CAF50;
+  background-color: brown;
   color: antiquewhite;
 }
 
@@ -24,7 +24,6 @@
 .logo {
   width: 16px;
   height: 16px;
-  border-radius: 50%;
 }
 
 .navList {

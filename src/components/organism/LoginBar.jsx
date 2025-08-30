@@ -11,8 +11,6 @@ function LoginBar() {
   };
 
   const handleSair = () => {
-    alert("Sair clicado");
-    console.log("Sair clicado");
     localStorage.removeItem("usuarioLogado");
     window.location.href = "/";
   };

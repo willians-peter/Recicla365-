@@ -6,15 +6,14 @@ import ButtonCustom from "../components/atoms/ButtonCustom";
 import { useState } from "react";
 
 function CadastroPontoDeColetaPage() {
- 
   const [nome, setNome] = useState("");
   const [descricao, setDescricao] = useState("");
   const [materiais, setMateriais] = useState({
     vidro: false,
     papel: false,
-    plastico: false,
+    plástico: false,
     metal: false,
-    organico: false,
+    orgânico: false,
   });
   const [cep, setCep] = useState("");
   const [logradouro, setLogradouro] = useState("");
@@ -35,7 +34,9 @@ function CadastroPontoDeColetaPage() {
     const pontoDeColeta = {
       nome,
       descricao,
-      materiais: Object.keys(materiais).filter((material) => materiais[material]),
+      materiais: Object.keys(materiais).filter(
+        (material) => materiais[material]
+      ),
       endereco: {
         cep,
         logradouro,
@@ -48,10 +49,27 @@ function CadastroPontoDeColetaPage() {
         cpf: usuarioLogado.cpf,
       },
     };
-    const pontosDeColeta = JSON.parse(localStorage.getItem("pontosDeColeta")) || [];
+    const pontosDeColeta =
+      JSON.parse(localStorage.getItem("pontosDeColeta")) || [];
     pontosDeColeta.push(pontoDeColeta);
     localStorage.setItem("pontosDeColeta", JSON.stringify(pontosDeColeta));
     alert("Ponto de coleta cadastrado com sucesso!");
+    setNome("");
+    setDescricao("");
+    setMateriais({
+      vidro: false,
+      papel: false,
+      plástico: false,
+      metal: false,
+      orgânico: false,
+    });
+    setCep("");
+    setLogradouro("");
+    setBairro("");
+    setEstado("");
+    setCidade("");
+    setNumero("");
+    setError({});
   };
 
   const handleCepChange = (event) => {
@@ -59,7 +77,6 @@ function CadastroPontoDeColetaPage() {
     setCep(cepValue);
     if (cepValue.length === 8) {
       fetch("https://viacep.com.br/ws/" + cepValue + "/json/")
-      
         .then((response) => response.json())
         .then((data) => {
           setLogradouro(data.logradouro);
@@ -103,39 +120,75 @@ function CadastroPontoDeColetaPage() {
         <form onSubmit={handleSubmit}>
           <label>
             Nome do ponto:
-            <input type="text" value={nome} onChange={(event) => setNome(event.target.value)} />
+            <input
+              type="text"
+              value={nome}
+              onChange={(event) => setNome(event.target.value)}
+            />
             {error.nome && <span style={{ color: "red" }}>{error.nome}</span>}
           </label>
           <label>
             Descrição:
-            <textarea value={descricao} onChange={(event) => setDescricao(event.target.value)} />
-            {error.descricao && <span style={{ color: "green" }}>{error.descricao}</span>}
+            <textarea
+              value={descricao}
+              onChange={(event) => setDescricao(event.target.value)}
+            />
+            {error.descricao && (
+              <span style={{ color: "green" }}>{error.descricao}</span>
+            )}
           </label>
           <label>
             Materiais:
             <div>
               <label>
-                <input type="checkbox" name="vidro" checked={materiais.vidro} onChange={handleMaterialChange} />
+                <input
+                  type="checkbox"
+                  name="vidro"
+                  checked={materiais.vidro}
+                  onChange={handleMaterialChange}
+                />
                 Vidro
               </label>
               <label>
-                <input type="checkbox" name="papel" checked={materiais.papel} onChange={handleMaterialChange} />
+                <input
+                  type="checkbox"
+                  name="papel"
+                  checked={materiais.papel}
+                  onChange={handleMaterialChange}
+                />
                 Papel
               </label>
               <label>
-                <input type="checkbox" name="plastico" checked={materiais.plastico} onChange={handleMaterialChange} />
+                <input
+                  type="checkbox"
+                  name="plástico"
+                  checked={materiais.plástico}
+                  onChange={handleMaterialChange}
+                />
                 Plástico
               </label>
               <label>
-                <input type="checkbox" name="metal" checked={materiais.metal} onChange={handleMaterialChange} />
+                <input
+                  type="checkbox"
+                  name="metal"
+                  checked={materiais.metal}
+                  onChange={handleMaterialChange}
+                />
                 Metal
               </label>
               <label>
-                <input type="checkbox" name="organico" checked={materiais.organico} onChange={handleMaterialChange} />
+                <input
+                  type="checkbox"
+                  name="orgânico"
+                  checked={materiais.orgânico}
+                  onChange={handleMaterialChange}
+                />
                 Orgânico
               </label>
             </div>
-            {error.materiais && <span style={{ color: "red" }}>{error.materiais}</span>}
+            {error.materiais && (
+              <span style={{ color: "red" }}>{error.materiais}</span>
+            )}
           </label>
           <label>
             CEP:
@@ -160,8 +213,14 @@ function CadastroPontoDeColetaPage() {
           </label>
           <label>
             Número:
-            <input type="text" value={numero} onChange={(event) => setNumero(event.target.value)} />
-            {error.numero && <span style={{ color: "red" }}>{error.numero}</span>}
+            <input
+              type="text"
+              value={numero}
+              onChange={(event) => setNumero(event.target.value)}
+            />
+            {error.numero && (
+              <span style={{ color: "red" }}>{error.numero}</span>
+            )}
           </label>
           <ButtonSeta type="submit" texto="Cadastrar" />
         </form>

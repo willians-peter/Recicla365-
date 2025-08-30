@@ -1,0 +1,36 @@
+.cardsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  margin: 20px;
+  cursor: pointer;
+}
+
+.card:hover {
+  background-color: #f0f0f0;
+}
+
+.listaPontos {
+  margin-top: 40px;
+}
+
+.listaPontos ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.listaPontos li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.listaPontos li:last-child {
+  border-bottom: none;
+}

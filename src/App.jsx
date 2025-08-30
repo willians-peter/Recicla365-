@@ -1,8 +1,8 @@
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes, Outlet, useLocation } from "react-router-dom";
 import NavigationBar from "./components/organism/NavigationBar";
+import LoginBar from "./components/organism/LoginBar";
 import DashBoardPage from "./pages/DashBoardPage";
 import CadastroPage from "./pages/CadastroPage";
-import PontosDeColetaPage from "./pages/PontosDeColetaPage";
 import CadastroPontoDeColetaPage from "./pages/CadastroPontoDeColetaPage";
 import SeusPontosDeColetaPage from "./pages/SeusPontosDeColeta";
 import NotFoundPage from "./pages/NotFoundPage";
@@ -10,11 +10,24 @@ import HomePage from "./pages/HomePage";
 import PrivateRoute from "./components/molecules/PrivateRoutes";
 import "./App.css";
 
+const Layout = () => {
+  const location = useLocation();
+
+  return (
+    <div key={location.pathname}>
+      <LoginBar />
+      <NavigationBar />
+      <Outlet />
+    </div>
+  );
+};
+
 function App() {
   return (
     <div className="App">
       <Routes>
         <Route path="/" element={<HomePage />} />
+
         <Route
           path="/dashboard"
           element={
@@ -24,14 +37,6 @@ function App() {
           }
         />
         <Route path="/cadastro" element={<CadastroPage />} />
-        <Route
-          path="/pontosdecoleta"
-          element={
-            <PrivateRoute>
-              <PontosDeColetaPage />
-            </PrivateRoute>
-          }
-        />
         <Route
           path="/seuspontosdecoleta"
           element={
@@ -48,9 +53,11 @@ function App() {
             </PrivateRoute>
           }
         />
+
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </div>
   );
 }
+
 export default App;
