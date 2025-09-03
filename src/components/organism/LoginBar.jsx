@@ -18,7 +18,12 @@ function LoginBar() {
     <nav className={styles.container}>
       <div className={styles.title}>
         <h1>Bem-vindo(a), {usuarioLogado?.nome}!</h1>
-        <ButtonCustom type="button" texto="Sair" onClick={handleSair} />
+        <ButtonCustom
+          className={styles.buttonSair}
+          type="button"
+          texto="Sair"
+          onClick={handleSair}
+        />
       </div>
     </nav>
   );

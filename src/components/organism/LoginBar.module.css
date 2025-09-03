@@ -1,8 +1,7 @@
 .container {
   padding: 4px;
   display: flex;
-  
-  background-color: #4CAF50;
+  background-color: #d5e8f8;
   color: antiquewhite;
 }
 
@@ -48,4 +47,8 @@
 
 .navList a.active {
   color: orange;
+}
+.buttonSair {
+  background-color: black;
+  color: #fff;
 }

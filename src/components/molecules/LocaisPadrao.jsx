@@ -1,8 +1,9 @@
 const LocaisPadrao = [
   {
+    id: 1756859201520,
     nome: "Igreja",
     descricao: "Igreja do bairro",
-    materiais: ["papel", "plástico", "metal"],
+    materiais: ["papel", "plastico", "metal"],
     endereco: {
       cep: "89214550",
       logradouro: "Rua Dalvina Libânia Prochnow",
@@ -11,12 +12,15 @@ const LocaisPadrao = [
       cidade: "Joinville",
       numero: "401",
     },
-    usuario: { cpf: "12345678911" },
+    usuario: {
+      cpf: "12345678911",
+    },
   },
   {
+    id: 1756859201521,
     nome: "Hospital ",
     descricao: "Hospital Municipal São José",
-    materiais: ["vidro", "papel", "plástico", "metal"],
+    materiais: ["vidro", "papel", "plastico", "metal"],
     endereco: {
       cep: "89202050",
       logradouro: "Rua Doutor Plácido Gomes",
@@ -25,12 +29,15 @@ const LocaisPadrao = [
       cidade: "Joinville",
       numero: "466",
     },
-    usuario: { cpf: "12345678911" },
+    usuario: {
+      cpf: "12345678911",
+    },
   },
   {
+    id: 1756859201522,
     nome: "Prefeitura ",
     descricao: "Prefeitura Municipal de Joinville",
-    materiais: ["vidro", "papel", "plástico", "metal"],
+    materiais: ["vidro", "papel", "plastico", "metal"],
     endereco: {
       cep: "89221005",
       logradouro: "Avenida Hermann August Lepper",
@@ -39,12 +46,15 @@ const LocaisPadrao = [
       cidade: "Joinville",
       numero: "10",
     },
-    usuario: { cpf: "98765432122" },
+    usuario: {
+      cpf: "98765432122",
+    },
   },
   {
+    id: 1756859201523,
     nome: "Aterro ",
     descricao: "Aterro Sanitário de Joinville",
-    materiais: ["orgânico"],
+    materiais: ["organico"],
     endereco: {
       cep: "89239290",
       logradouro: "Rua dos Bororós",
@@ -53,12 +63,15 @@ const LocaisPadrao = [
       cidade: "Joinville",
       numero: "890",
     },
-    usuario: { cpf: "98765432122" },
+    usuario: {
+      cpf: "98765432122",
+    },
   },
   {
+    id: 1756859201524,
     nome: "Associação De Moradores",
     descricao: "Associação de Moradores Bairro São Marcos",
-    materiais: ["vidro", "papel", "plástico", "metal"],
+    materiais: ["vidro", "papel", "plastico", "metal"],
     endereco: {
       cep: "89214140",
       logradouro: "Rua Pedro Rauch",
@@ -67,12 +80,15 @@ const LocaisPadrao = [
       cidade: "Joinville",
       numero: "sem número",
     },
-    usuario: { cpf: "112233445533" },
+    usuario: {
+      cpf: "112233445533",
+    },
   },
   {
+    id: 1756859201525,
     nome: "Joinville Esporte Clube",
     descricao: "Arena Joinville Esporte Clube",
-    materiais: ["vidro", "papel", "plástico", "metal"],
+    materiais: ["vidro", "papel", "plastico", "metal"],
     endereco: {
       cep: "89202310",
       logradouro: "Rua Inácio Bastos",
@@ -81,12 +97,15 @@ const LocaisPadrao = [
       cidade: "Joinville",
       numero: "310",
     },
-    usuario: { cpf: "112233445533" },
+    usuario: {
+      cpf: "112233445533",
+    },
   },
   {
+    id: 1756859201526,
     nome: "62º Batalhão de Infantaria ",
     descricao: "62º Batalhão de Infantaria de Joinville/SC",
-    materiais: ["vidro", "papel", "plástico", "metal", "orgânico"],
+    materiais: ["vidro", "papel", "plastico", "metal", "organico"],
     endereco: {
       cep: "89203000",
       logradouro: "Rua Ministro Calógeras",
@@ -95,12 +114,15 @@ const LocaisPadrao = [
       cidade: "Joinville",
       numero: "1200",
     },
-    usuario: { cpf: "554433221144" },
+    usuario: {
+      cpf: "554433221144",
+    },
   },
   {
+    id: 1756859201527,
     nome: "Museu de Arte",
     descricao: "Museu de Arte de Joinville",
-    materiais: ["plástico", "metal"],
+    materiais: ["plastico", "metal"],
     endereco: {
       cep: "89201602",
       logradouro: "Rua Quinze de Novembro",
@@ -109,12 +131,15 @@ const LocaisPadrao = [
       cidade: "Joinville",
       numero: "1400",
     },
-    usuario: { cpf: "554433221144" },
+    usuario: {
+      cpf: "554433221144",
+    },
   },
   {
+    id: 1756859201528,
     nome: "Zoobotânico",
     descricao: "Zoobotânico Joinville",
-    materiais: ["orgânico"],
+    materiais: ["organico"],
     endereco: {
       cep: "89221020",
       logradouro: "Rua Pastor Guilherme Rau",
@@ -126,9 +151,10 @@ const LocaisPadrao = [
     usuario: { cpf: "223344556655" },
   },
   {
+    id: 1756859201529,
     nome: "Shopping Estação ",
     descricao: "Shopping Estação Joinville",
-    materiais: ["papel", "plástico"],
+    materiais: ["papel", "plastico"],
     endereco: {
       cep: "89202002",
       logradouro: "Avenida Getúlio Vargas",
@@ -136,20 +162,6 @@ const LocaisPadrao = [
       estado: "SC",
       cidade: "Joinville",
       numero: "1446",
-    },
-    usuario: { cpf: "223344556655" },
-  },
-  {
-    nome: "Teste",
-    descricao: "Teste",
-    materiais: ["orgânico"],
-    endereco: {
-      cep: "89202470",
-      logradouro: "Rua Cairu",
-      bairro: "Bucarein",
-      estado: "SC",
-      cidade: "Joinville",
-      numero: "Teste",
     },
     usuario: { cpf: "223344556655" },
   },

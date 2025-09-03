@@ -4,6 +4,8 @@ import ButtonSeta from "../components/atoms/ButtonSeta";
 import styles from "./CadastroPontoDeColetaPage.module.css";
 import ButtonCustom from "../components/atoms/ButtonCustom";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { kkKZ } from "@mui/material/locale";
 
 function CadastroPontoDeColetaPage() {
   const [nome, setNome] = useState("");
@@ -11,9 +13,9 @@ function CadastroPontoDeColetaPage() {
   const [materiais, setMateriais] = useState({
     vidro: false,
     papel: false,
-    plástico: false,
+    plastico: false,
     metal: false,
-    orgânico: false,
+    organico: false,
   });
   const [cep, setCep] = useState("");
   const [logradouro, setLogradouro] = useState("");
@@ -32,6 +34,7 @@ function CadastroPontoDeColetaPage() {
     }
     const usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
     const pontoDeColeta = {
+      id: Date.now(),
       nome,
       descricao,
       materiais: Object.keys(materiais).filter(
@@ -54,14 +57,15 @@ function CadastroPontoDeColetaPage() {
     pontosDeColeta.push(pontoDeColeta);
     localStorage.setItem("pontosDeColeta", JSON.stringify(pontosDeColeta));
     alert("Ponto de coleta cadastrado com sucesso!");
+    window.location.href = "/dashboard";
     setNome("");
     setDescricao("");
     setMateriais({
       vidro: false,
       papel: false,
-      plástico: false,
+      plastico: false,
       metal: false,
-      orgânico: false,
+      organico: false,
     });
     setCep("");
     setLogradouro("");
@@ -89,6 +93,11 @@ function CadastroPontoDeColetaPage() {
 
   const handleMaterialChange = (event) => {
     setMateriais({ ...materiais, [event.target.name]: event.target.checked });
+  };
+
+  const navigate = useNavigate();
+  const handleVoltar = () => {
+    navigate("/seuspontosdecoleta", { replace: true });
   };
 
   const validateForm = () => {
@@ -134,7 +143,7 @@ function CadastroPontoDeColetaPage() {
               onChange={(event) => setDescricao(event.target.value)}
             />
             {error.descricao && (
-              <span style={{ color: "green" }}>{error.descricao}</span>
+              <span style={{ color: "red" }}>{error.descricao}</span>
             )}
           </label>
           <label>
@@ -161,8 +170,8 @@ function CadastroPontoDeColetaPage() {
               <label>
                 <input
                   type="checkbox"
-                  name="plástico"
-                  checked={materiais.plástico}
+                  name="plastico"
+                  checked={materiais.plastico}
                   onChange={handleMaterialChange}
                 />
                 Plástico
@@ -179,8 +188,8 @@ function CadastroPontoDeColetaPage() {
               <label>
                 <input
                   type="checkbox"
-                  name="orgânico"
-                  checked={materiais.orgânico}
+                  name="organico"
+                  checked={materiais.organico}
                   onChange={handleMaterialChange}
                 />
                 Orgânico
@@ -223,6 +232,8 @@ function CadastroPontoDeColetaPage() {
             )}
           </label>
           <ButtonSeta type="submit" texto="Cadastrar" />
+          <br />
+          <ButtonCustom texto="Voltar" onClick={handleVoltar} />
         </form>
       </div>
     </>

@@ -8,6 +8,7 @@ import SeusPontosDeColetaPage from "./pages/SeusPontosDeColeta";
 import NotFoundPage from "./pages/NotFoundPage";
 import HomePage from "./pages/HomePage";
 import PrivateRoute from "./components/molecules/PrivateRoutes";
+
 import "./App.css";
 
 const Layout = () => {

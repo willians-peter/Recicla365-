@@ -42,7 +42,7 @@
 }
 
 .container button[type="submit"] {
-  background-color: #4CAF50;
+  background-color: #1976d2;
   color: #fff;
   padding: 10px 20px;
   border: none;
@@ -51,5 +51,5 @@
 }
 
 .container button[type="submit"]:hover {
-  background-color: #3e8e41;
+  background-color: #64b5f6;
 }
