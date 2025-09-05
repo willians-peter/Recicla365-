@@ -38,7 +38,7 @@ const HomePage = () => {
   return (
     <div className={styles.container}>
       <div className={styles.imageContainer}>
-        <p className={styles.title}>Recycla 365</p>
+        <p className={styles.title}>RecyclaVille</p>
         <img
           src={Natureza}
           alt="Natureza com montanhas, floresta e rio com simbolo de reciclagem"
