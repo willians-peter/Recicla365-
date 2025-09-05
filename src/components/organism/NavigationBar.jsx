@@ -16,7 +16,7 @@ function NavigationBar() {
       <div className={styles.title}>
         <img className={styles.logo} src={IconRecicle} alt="Logo" />
         <NavLink to="/">
-          <h1>Recicla 365</h1>
+          <h1>ReciclaVille</h1>
         </NavLink>
       </div>
       <ul className={styles.navList}>
